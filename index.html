@@ -1,216 +1,177 @@
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AUREX CORE – Cyber Intelligence</title>
+  <title>AUREX CORE – Offensive Cyber Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', monospace;
-      background-color: #0d1117;
-      color: #ffffff;
+      font-family: 'Courier New', monospace;
+      background: #0d1117;
+      color: #e8e8e8;
       overflow-x: hidden;
     }
-
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background-color: #161b22;
+      justify-content: space-between;
       padding: 20px 40px;
+      background-color: #161b22;
       border-bottom: 1px solid #2f363e;
-      box-shadow: 0 0 10px #00f7ff40;
+      box-shadow: 0 0 12px #00f7ff40;
     }
-
     header img {
-      height: 60px;
+      height: 50px;
     }
-
     nav a {
       color: #00f7ff;
+      margin: 0 10px;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
+      font-weight: bold;
     }
-
-    nav a:hover {
-      color: #ffffff;
-      text-shadow: 0 0 8px #00f7ff;
-    }
-
     .hero {
+      background: linear-gradient(to right, #0d1117, #121923);
+      padding: 100px 20px 80px;
       text-align: center;
-      padding: 120px 20px 80px;
-      background: linear-gradient(to right, #0d1117, #1f1f1f);
+      position: relative;
     }
-
     .hero h1 {
       font-size: 48px;
-      margin-bottom: 10px;
       color: #00f7ff;
-      text-shadow: 0 0 10px #00f7ff;
+      margin-bottom: 10px;
     }
-
     .hero p {
-      font-size: 20px;
+      font-size: 18px;
       color: #a0a0a0;
       max-width: 600px;
       margin: 0 auto;
     }
-
-    section {
-      padding: 80px 40px;
-      max-width: 1000px;
+    .section {
+      padding: 60px 30px;
+      max-width: 1100px;
       margin: auto;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
     }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     .section-title {
-      font-size: 32px;
+      font-size: 28px;
       margin-bottom: 30px;
-      border-left: 5px solid #00f7ff;
+      border-left: 4px solid #00f7ff;
       padding-left: 15px;
-      text-shadow: 0 0 8px #00f7ff60;
     }
-
-    .feature-advanced {
-      background-color: #10151c;
-      padding: 25px;
-      border-radius: 10px;
-      border: 1px solid #2e3540;
-      box-shadow: 0 0 15px #00f7ff20;
-      margin-bottom: 40px;
-      opacity: 0;
-      transform: translateX(-80px);
-      transition: all 1s ease;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
     }
-
-    .feature-advanced.visible {
-      opacity: 1;
-      transform: translateX(0);
+    .card {
+      background-color: #11161d;
+      border: 1px solid #2a3038;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px #00f7ff20;
+      transition: 0.3s;
     }
-
-    .feature-advanced h3 {
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px #00f7ff60;
+    }
+    .card h3 {
       color: #00f7ff;
+      font-size: 18px;
       margin-bottom: 10px;
-      text-shadow: 0 0 5px #00f7ff;
     }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .card p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0;
     }
-
-    .contact-form input, .contact-form textarea {
-      background-color: #0f131a;
-      border: 1px solid #2e3540;
-      padding: 12px;
-      color: white;
-      border-radius: 5px;
-      font-family: monospace;
-    }
-
-    .contact-form button {
-      background-color: #00f7ff;
-      border: none;
-      padding: 12px;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
-      box-shadow: 0 0 10px #00f7ff50;
-    }
-
     footer {
       text-align: center;
       padding: 30px;
-      background-color: #161b22;
-      color: #777;
-      border-top: 1px solid #2e3540;
+      color: #888;
+      background-color: #0d1117;
+      border-top: 1px solid #2a2a2a;
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="2D568C1D-0ECB-4BF0-AF67-D7FCD6AF286F.png" alt="Aurex Core Logo">
     <nav>
-      <a href="#mission">Misión</a>
-      <a href="#services">Servicios</a>
-      <a href="#contact">Contacto</a>
+      <a href="#services">Services</a>
+      <a href="#mission">Mission</a>
     </nav>
   </header>
 
   <div class="hero">
     <h1>AUREX CORE</h1>
-    <p>Precisión quirúrgica en detección de vulnerabilidades. Nuestra fuerza: lo que otros no pueden ver.</p>
+    <p>Precision. Stealth. Execution. We don’t follow threats — we find them first.</p>
   </div>
 
-  <section id="mission">
-    <h2 class="section-title">Misión Estratégica</h2>
+  <section id="mission" class="section">
+    <h2 class="section-title">Strategic Cyber Mission</h2>
     <p>
-      Detectar, anticipar y resolver vulnerabilidades críticas antes de que se conviertan en amenazas reales.
-      AUREX CORE es un núcleo de inteligencia activa, impulsado por análisis profundo, lógica simbólica y visión operativa.
+      AUREX CORE is a high-intensity vulnerability research unit. We operate with offensive intelligence, zero-day detection methods, and encrypted simulation systems. Our reports are surgical, our operations invisible, and our discoveries — undeniable.
     </p>
   </section>
 
-  <section id="services">
-    <h2 class="section-title">Servicios Avanzados</h2>
+  <section id="services" class="section">
+    <h2 class="section-title">Elite HackerOne Services</h2>
+    <div class="services-grid">
 
-    <div class="feature-advanced">
-      <h3>Scan Neural</h3>
-      <p>Auditoría en tiempo real basada en patrones adaptativos que detectan vectores de ataque ocultos en sistemas dinámicos.</p>
+      <div class="card">
+        <h3>Reconnaissance</h3>
+        <p>Surface & deep scanning with dynamic fingerprinting.</p>
+      </div>
+
+      <div class="card">
+        <h3>Web Vulnerability Testing</h3>
+        <p>OWASP Top 10, business logic flaws, & advanced bypass techniques.</p>
+      </div>
+
+      <div class="card">
+        <h3>Mobile App Testing</h3>
+        <p>iOS & Android black-box testing with MITM & code injection simulation.</p>
+      </div>
+
+      <div class="card">
+        <h3>Source Code Review</h3>
+        <p>Static & dynamic analysis with focus on logic breaks & injections.</p>
+      </div>
+
+      <div class="card">
+        <h3>Social Engineering</h3>
+        <p>Simulated phishing & manipulation targeting response layers.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cryptographic Issues</h3>
+        <p>Detection of broken implementations, weak keys & entropy leaks.</p>
+      </div>
+
+      <div class="card">
+        <h3>Zero-Day Simulation</h3>
+        <p>Controlled deployment of unknown vectors on isolated environments.</p>
+      </div>
+
+      <div class="card">
+        <h3>Red Team Operations</h3>
+        <p>Full-scope adversarial emulation across digital & human vectors.</p>
+      </div>
+
+      <div class="card">
+        <h3>Bug Bounty Program Setup</h3>
+        <p>We help companies design high-quality vulnerability programs.</p>
+      </div>
+
     </div>
-
-    <div class="feature-advanced">
-      <h3>Trace Report</h3>
-      <p>Generación de informes cifrados, con visualización técnica e interpretativa lista para ejecutivos y equipos de seguridad.</p>
-    </div>
-
-    <div class="feature-advanced">
-      <h3>Core Simulation</h3>
-      <p>Simulaciones controladas de ataques éticos en infraestructura sensible, orientadas a descubrir errores lógicos y físicos no previstos.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Contacto Directo</h2>
-    <form class="contact-form" onsubmit="sendMessage(); return false;">
-      <input type="text" id="name" placeholder="Tu nombre" required>
-      <input type="email" id="email" placeholder="Tu correo" required>
-      <textarea id="message" rows="5" placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar Mensaje</button>
-    </form>
   </section>
 
   <footer>
-    &copy; 2025 AUREX CORE. Todos los derechos reservados.
+    &copy; 2025 AUREX CORE — Operated in stealth. Powered by precision.
   </footer>
 
-  <script>
-    function sendMessage() {
-      const name = document.getElementById("name").value;
-      alert(`Gracias, ${name}. Tu mensaje fue recibido.`);
-    }
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-
-    document.querySelectorAll('section').forEach(section => observer.observe(section));
-    document.querySelectorAll('.feature-advanced').forEach(item => observer.observe(item));
-  </script>
 </body>
 </html>
+
